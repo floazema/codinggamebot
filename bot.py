@@ -53,7 +53,7 @@ while (True):
     goal = element.text
     elements_text = driver2.find_elements(By.CSS_SELECTOR, '.view-lines.monaco-mouse-cursor-text')
     template = '\n'.join([element.text for element in elements_text])
-    sentence = "résous le problème suivant en python avec cette énnoncé et un template de code et fait que je n'ai que à copier coller pour que ça fonctionne" + goal + "\n Le template est le suivant: \n" + template
+    sentence = "résous le problème suivant en python : " + goal
     input_elem = driver1.find_element(By.XPATH, '//*[@id="prompt-textarea"]')
     input_elem.send_keys(sentence)
     send_button = driver1.find_element(By.XPATH, "//*[@data-testid='send-button']")
